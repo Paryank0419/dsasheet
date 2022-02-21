@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main
 {
-    class MinHeap{
+    class Kthsmallest{
         int[] harr;
         int cap;
         int size;
