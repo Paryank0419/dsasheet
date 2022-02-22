@@ -56,3 +56,33 @@ class SortZOTArray {
 	}
 }
 
+
+
+/*
+The problem was posed with three colours, here `0', `1' and `2'. The array is divided into four sections:
+
+	-->a[1..Lo-1] zeroes (red)
+	-->a[Lo..Mid-] ones (white)
+	-->a[Mid..Hi] unknown
+	-->a[Hi+1..N] twos (blue)
+
+
+The unknown region is shrunk while maintaining these conditions.
+
+Algorithm:
+	Begin:
+
+	Lo := 1; Mid := 1; Hi := N;
+	while Mid <= Hi do
+		Invariant: a[1..Lo-1]=0 and a[Lo..Mid-1]=1 and a[Hi+1..N]=2; a[Mid..Hi] are unknown.
+		case a[Mid] in
+			0: swap a[Lo] and a[Mid]; Lo++; Mid++ //We only increment area related variable when we confirm the presence of
+			1: Mid++                               // correct element like when we get a[mid] == 0 then we increase Lo++
+			2: swap a[Mid] and a[Hi]; Hi--
+	End
+
+
+--- Dutch National Flag Algorithm, or 3-way Partitioning ---
+
+
+*/
