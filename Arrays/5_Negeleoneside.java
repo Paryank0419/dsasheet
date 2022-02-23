@@ -28,3 +28,30 @@ public class Negeleoneside{
         printArray(arr, n);
     }
 }
+
+/*                Another Approach
+Here, we will use the famous Dutch National Flag Algorithm for two “colors”. The first color will be for all negativeintegers and the second color will be for all positive integers. We will divide the array into three partitions with the helpof two pointers, low and high. 
+
+    1. ar[1…low-1] negative integers
+
+    2. ar[low…high] unknown
+
+    3. ar[high+1…N] positive integers
+
+Now, we explore the array with the help of low pointer, shrinking the unknows partition, and moving elements to their correct partition in the process. We do this until we have explored all the elements, and size of the unknown partition shrinks to zero.
+
+
+public static void move(int[] ar){
+    int low = 0;
+    int high = ar.length - 1;
+    while (low <= high) {
+        if (ar[low] <= 0)
+            low++;
+        else
+            swap(ar, low, high--);
+    }
+}
+
+
+
+*/
